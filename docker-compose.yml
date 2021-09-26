@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    # M1の人はplatformをコメントイン
+    # platform: linux/amd64
+    container_name: imedia-db
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: imedia
+      MYSQL_USER: imedia
+      MYSQL_PASSWORD: secret
+      TZ: Asia/Tokyo
+    volumes:
+      - type: volume
+        source: db
+        target: /var/lib/mysql
+      - type: bind
+        source: ./docker/db/my.conf
+        target: /etc/mysql/conf.d/my.conf
+      - type: bind
+        source: ./logs
+        target: /var/log/mysql
+    networks:
+      imedia_admin_net:
+      imedia_batch_net:
+      imedia_log_net:
+      imedia_web_net:
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: imedia-mail
+    ports:
+      - 8025:8025
+    networks:
+      imedia_admin_net:
+      imedia_batch_net:
+      imedia_web_net:
+
+volumes:
+  db:
+    name: imedia-db
+
+networks:
+  imedia_admin_net:
+    external: true
+  imedia_batch_net:
+    external: true
+  imedia_log_net:
+    external: true
+  imedia_web_net:
+    external: true
