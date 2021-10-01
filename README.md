@@ -52,7 +52,8 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
        ```sh
        git clone https://github.com/gizumo-inc/cw-imedia-common.git && cd cw-imedia-common
        ```
-3. ネットワークを作成
+3. ネットワークを作成  
+   ※事前にimediaの他のプロジェクトで環境構築を行った場合は、一部ネットワークが既に存在するエラーが表示されます。その場合は該当ネットワークの作成はスキップ。
     ```sh
     docker network create imedia_admin_net
     docker network create imedia_batch_net
