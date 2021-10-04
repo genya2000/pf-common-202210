@@ -6,6 +6,7 @@ services:
     # M1の人はplatformをコメントイン
     # platform: linux/amd64
     container_name: imedia-db
+    privileged: true
     ports:
       - 3307:3306
     environment:
@@ -33,6 +34,7 @@ services:
   mailhog:
     image: mailhog/mailhog:latest
     container_name: imedia-mail
+    privileged: true
     ports:
       - 8025:8025
     networks:
