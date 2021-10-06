@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mysql:5.7
+    build: ./docker/db
     # M1の人はplatformをコメントイン
     # platform: linux/amd64
     container_name: imedia-db
@@ -20,8 +20,8 @@ services:
         source: db
         target: /var/lib/mysql
       - type: bind
-        source: ./docker/db/my.conf
-        target: /etc/mysql/conf.d/my.conf
+        source: ./docker/db/my.cnf
+        target: /etc/mysql/conf.d/my.cnf
       - type: bind
         source: ./logs
         target: /var/log/mysql
