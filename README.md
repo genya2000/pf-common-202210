@@ -2,18 +2,19 @@
 iMediaの開発で共通して使用するコンテナを管理するリポジトリです。
 - データベースコンテナ
 - メールコンテナ
+- S3互換オブジェクト(MinIO)コンテナ
 
 <br>
 
 ## 1. Dockerネットワーク&コンテナ対応表
 iMediaの開発で使用するコンテナ群とネットワークの対応表です。
 
-||admin|api|app|batch|db|log|mailhog|pagebuilder|
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|imedia_admin_net|○||||○||○||
-|imedia_batch_net||||○|○||○||
-|imedia_log_net|||||○|○|||
-|imedia_web_net||○|○||○||○|○|
+||admin|api|app|batch|db|log|mailhog|pagebuilder|minio|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|
+|imedia_admin_net|○||||○||○|||
+|imedia_batch_net||||○|○||○|||
+|imedia_log_net|||||○|○||||
+|imedia_web_net||○|○||○||○|○|○|
 
 <br>
 
@@ -37,7 +38,8 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
     git clone https://github.com/gizumo-inc/cw-imedia-common.git && cd cw-imedia-common && make init
     ```
 3. コンソールで`make ps`を実行して、dbとmailhogのSTATUSがそれぞれ`running`になっていることを確認
-4. ブラウザで[localhost:8025](localhost:8025)にアクセスして、mailhogの画面が表示されること確認
+4. ブラウザで[localhost:8025](http://localhost:8025)にアクセスして、mailhogの画面が表示されること確認
+5. ブラウザで[localhost:9001](http://localhost:9001)にアクセスして、MinIOの画面が表示されること確認
 
 <br>
 
@@ -65,7 +67,8 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
    docker-compose up -d --build
    ```
 5. コンソールで`docker-compose ps`を実行して、dbとmailhogのStateがそれぞれ`up`になっていることを確認
-6. ブラウザで[localhost:8025](localhost:8025)にアクセスして、mailhogの画面が表示されること確認
+6. ブラウザで[localhost:8025](http://localhost:8025)にアクセスして、mailhogの画面が表示されること確認
+7. ブラウザで[localhost:9001](http://localhost:9001)にアクセスして、MinIOの画面が表示されること確認
 
 ## 4. その他
 - このプロジェクトは`make`コマンドで一通りの操作をすることができます  

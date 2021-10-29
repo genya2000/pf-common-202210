@@ -22,6 +22,7 @@ help:
 	@echo 'log-db         -- dbコンテナのログを表示します'
 	@echo 'log-db-watch   -- dbコンテナのログを表示し続けます'
 	@echo 'log-mailhog    -- mailhogコンテナのログを表示します'
+	@echo 'log-minio      -- minioコンテナのログを表示します'
 	@echo ''
 	@echo '---------- dbコンテナに関するコマンド ----------'
 	@echo 'db             -- dbコンテナに接続します'
@@ -76,6 +77,8 @@ log-db-watch:
 	docker-compose logs --follow db
 log-mailhog:
 	docker-compose logs mailhog
+log-minio:
+	docker-compose logs minio
 
 db:
 	docker-compose exec db bash

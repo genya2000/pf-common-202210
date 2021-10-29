@@ -42,6 +42,24 @@ services:
       imedia_batch_net:
       imedia_web_net:
 
+  minio:
+    image: minio/minio:latest
+    container_name: imedia-minio
+    privileged: true
+    ports:
+      - 9000:9000 # INFO: API用
+      - 9001:9001 # INFO: Consoleアクセス用
+    volumes:
+      - type: bind
+        source: ./docker/minio/data
+        target: /export
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: miniosecret
+    command: ['server', '/data', '--console-address', ':9001']
+    networks:
+      imedia_web_net:
+
 volumes:
   db:
     name: imedia-db
