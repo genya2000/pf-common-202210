@@ -1,4 +1,3 @@
-
 help:
 	@echo '---------- 環境構築に関するコマンド -----------'
 	@echo 'init           -- プロジェクト初期のセットアップを行います※基本的にクローンしてきて1回目のみ実行'
@@ -40,7 +39,6 @@ create-network:
 	-@docker network create imedia_batch_net
 	-@docker network create imedia_log_net
 	-@docker network create imedia_web_net
-	@echo 'success'
 build:
 	docker-compose build --no-cache --force-rm
 up:
