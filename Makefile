@@ -1,7 +1,3 @@
-NETWORK_ADMIN = $(shell docker network ls | grep imedia_admin_net)
-NETWORK_BATCH = $(shell docker network ls | grep imedia_batch_net)
-NETWORK_LOG = $(shell docker network ls | grep imedia_log_net)
-NETWORK_WEB = $(shell docker network ls | grep imedia_web_net)
 
 help:
 	@echo '---------- 環境構築に関するコマンド -----------'
@@ -40,18 +36,11 @@ remake:
 	@make up
 
 create-network:
-ifeq ($(NETWORK_ADMIN),)
-	docker network create imedia_admin_net
-endif
-ifeq ($(NETWORK_BATCH),)
-	docker network create imedia_batch_net
-endif
-ifeq ($(NETWORK_LOG),)
-	docker network create imedia_log_net
-endif
-ifeq ($(NETWORK_WEB),)
-	docker network create imedia_web_net
-endif
+	-@docker network create imedia_admin_net
+	-@docker network create imedia_batch_net
+	-@docker network create imedia_log_net
+	-@docker network create imedia_web_net
+	@echo 'success'
 build:
 	docker-compose build --no-cache --force-rm
 up:
