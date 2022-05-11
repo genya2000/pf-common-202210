@@ -85,6 +85,8 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 6. ヘッダーの`Create Bucket`をクリック
 7. `Bucket Name`に`local-manual-ses-mailer-config`を入力し、`Save`をクリック
 
+<br>
+
 ## 4. その他
 - このプロジェクトは`make`コマンドで一通りの操作をすることができます  
   ※コンソールで`make help`を実行すると使用できるコマンドと説明が表示されます
