@@ -40,6 +40,7 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 3. コンソールで`make ps`を実行して、dbとmailhogのSTATUSがそれぞれ`running`になっていることを確認
 4. ブラウザで[localhost:8025](http://localhost:8025)にアクセスして、mailhogの画面が表示されること確認
 5. ブラウザで[localhost:9001](http://localhost:9001)にアクセスして、MinIOの画面が表示されること確認
+6. <a href="#33-MinIOの設定">MinIOの設定</a>を行う
 
 <br>
 
@@ -69,6 +70,23 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 5. コンソールで`docker-compose ps`を実行して、dbとmailhogのStateがそれぞれ`up`になっていることを確認
 6. ブラウザで[localhost:8025](http://localhost:8025)にアクセスして、mailhogの画面が表示されること確認
 7. ブラウザで[localhost:9001](http://localhost:9001)にアクセスして、MinIOの画面が表示されること確認
+8. <a href="#33-MinIOの設定">MinIOの設定</a>を行う
+
+<br>
+
+### 3.3. MinIOの設定
+1. ブラウザで[localhost:9001](http://localhost:9001)にアクセス
+2. 下記に記載の認証情報を入力してログインを行う
+    - Username: `docker-compose.yml` > `services` > `minio` > `environment` > `MINIO_ROOT_USER`
+    - Password: `docker-compose.yml` > `services` > `minio` > `environment` > `MINIO_ROOT_PASSWORD`
+3. 左メニューの`Buckets`をクリック
+4. ヘッダーの`Create Bucket`をクリック
+5. `Bucket Name`に`imedia`を入力し、`Save`をクリック
+6. `Manage`をクリックし、`Access Policy`を`Public`に変更
+7. ヘッダーの`Create Bucket`をクリック
+8. `Bucket Name`に`local-manual-ses-mailer-config`を入力し、`Save`をクリック
+
+<br>
 
 ## 4. その他
 - このプロジェクトは`make`コマンドで一通りの操作をすることができます  
