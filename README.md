@@ -85,6 +85,8 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 6. `Manage`をクリックし、`Access Policy`を`Public`に変更
 7. ヘッダーの`Create Bucket`をクリック
 8. `Bucket Name`に`local-manual-ses-mailer-config`を入力し、`Save`をクリック
+9. ヘッダーの`Create Bucket`をクリック
+10. `Bucket Name`に`local-switch-plus-article-import-assets`を入力し、`Save`をクリック
 
 <br>
 
