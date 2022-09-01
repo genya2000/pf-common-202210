@@ -81,12 +81,12 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
     - Password: `docker-compose.yml` > `services` > `minio` > `environment` > `MINIO_ROOT_PASSWORD`
 3. 左メニューの`Buckets`をクリック
 4. ヘッダーの`Create Bucket`をクリック
-5. `Bucket Name`に`imedia`を入力し、`Save`をクリック
+5. `Bucket Name`に`imedia`を入力し、`Create Bucket`をクリック
 6. `Manage`をクリックし、`Access Policy`を`Public`に変更
 7. ヘッダーの`Create Bucket`をクリック
-8. `Bucket Name`に`local-manual-ses-mailer-config`を入力し、`Save`をクリック
+8. `Bucket Name`に`local-manual-ses-mailer-config`を入力し、`Create Bucket`をクリック
 9. ヘッダーの`Create Bucket`をクリック
-10. `Bucket Name`に`local-switch-plus-article-import-assets`を入力し、`Save`をクリック
+10. `Bucket Name`に`local-switch-plus-article-import-assets`を入力し、`Create Bucket`をクリック
 
 <br>
 
