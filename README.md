@@ -31,11 +31,11 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 2. 自身の設定(sshまたはhttps)に応じて下記コマンドを実行
   - ssh
     ```sh
-    git clone git@github.com:gizumo-inc/cw-imedia-common.git && cd cw-imedia-common && make init
+    git clone ssh://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/cw-imedia-common && cd cw-imedia-common && make init
     ```
   - https
     ```sh
-    git clone https://github.com/gizumo-inc/cw-imedia-common.git && cd cw-imedia-common && make init
+    git clone https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/cw-imedia-common && cd cw-imedia-common && make init
     ```
 3. コンソールで`make ps`を実行して、dbとmailhogのSTATUSがそれぞれ`running`になっていることを確認
 4. ブラウザで[localhost:8025](http://localhost:8025)にアクセスして、mailhogの画面が表示されること確認
@@ -49,11 +49,11 @@ iMediaの開発で使用するコンテナ群とネットワークの対応表�
 2. 自身の設定(sshまたはhttps)に応じて下記コマンドを実行
      - ssh
        ```sh
-       git clone git@github.com:gizumo-inc/cw-imedia-common.git && cd cw-imedia-common
+       git clone ssh://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/cw-imedia-common && cd cw-imedia-common
        ```
      - https
        ```sh
-       git clone https://github.com/gizumo-inc/cw-imedia-common.git && cd cw-imedia-common
+       git clone https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/cw-imedia-common && cd cw-imedia-common
        ```
 3. ネットワークを作成  
    ※事前にimediaの他のプロジェクトで環境構築を行った場合は、一部ネットワークが既に存在するエラーが表示されます。その場合は該当ネットワークの作成はスキップ。
